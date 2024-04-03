@@ -1,33 +1,16 @@
+@import "github-syntax-dark/lib/github-dark.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .label {
+    @apply bg-sky-600 px-2 mt-2 font-semibold rounded-xl text-zinc-800;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .label-selected {
+    @apply bg-sky-800 px-2 mt-2 font-semibold rounded-xl text-neutral-300;
+  }
+  .layout {
+    @apply w-screen h-screen overflow-auto flex flex-col items-center bg-zinc-800 text-neutral-300
   }
 }
